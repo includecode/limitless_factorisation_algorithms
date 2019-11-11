@@ -1,14 +1,14 @@
 #include <iostream>
 #include <cmath>
 #include <chrono>
-#include "functions.hpp"
+#include "Factoriser.hpp"
 using namespace std;
 
 int main(int argc, char *argv[])
 {
 
     //DecimalToBinary(1844674407370955161);
- /*
+    /*
     clock_t begin = clock();
 
     // Get ending timepoint
@@ -21,16 +21,19 @@ int main(int argc, char *argv[])
     std::cout << "Entrer le nombre à factoriser:";
     unsigned long long int nbre;
     cin >> nbre;
-
+    Factoriser *factorisationNaive = new Factoriser(nbre);
     std::cout << "--------------------------" << endl;
     std::cout << "DEBUT FACTORISATION NAIVE" << endl;
-    factorisationNaive(nbre);
+    factorisationNaive->factorisationNaive(nbre);
+    factorisationNaive->printFactorsResult();
     std::cout << "FIN FACTORISATION NAIVE" << endl;
     std::cout << "--------------------------" << endl;
 
+    Factoriser *factorisationFermat = new Factoriser(nbre);
     std::cout << endl;
     std::cout << "DEBUT FACTORISATION FERMAT" << endl;
-    fermatFactorisation(nbre);
+    factorisationFermat->fermatFactorisation(nbre);
+    factorisationFermat->printFactorsResult();
     std::cout << "FIN FACTORISATION FERMAT" << endl;
     std::cout << "--------------------------" << endl;
     return 0;
