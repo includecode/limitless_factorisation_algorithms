@@ -1,0 +1,149 @@
+==5862== Memcheck, a memory error detector
+==5862== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5862== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==5862== Command: ./app 14557999
+==5862== Parent PID: 5772
+==5862== 
+--5862-- 
+--5862-- Valgrind options:
+--5862--    -v
+--5862--    --tool=memcheck
+--5862--    --leak-check=full
+--5862--    --num-callers=40
+--5862--    --log-file=valgrind.log
+--5862-- Contents of /proc/version:
+--5862--   Linux version 5.2.0-kali2-amd64 (devel@kali.org) (gcc version 8.3.0 (Debian 8.3.0-19)) #1 SMP Debian 5.2.9-2kali1 (2019-08-22)
+--5862-- 
+--5862-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--5862-- Page sizes: currently 4096, max supported 4096
+--5862-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--5862-- Reading syms from /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.29.so
+--5862--   Considering /usr/lib/debug/.build-id/75/6169f4795800ea95544fb9851e16b81e0804da.debug ..
+--5862--   .. build-id is valid
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--5862--   Considering /usr/lib/debug/.build-id/80/5d052772dc3c48dbe4654094fcd7ddddfdb87a.debug ..
+--5862--   .. build-id is valid
+--5862--    object doesn't have a dynamic symbol table
+--5862-- Scheduler: using generic scheduler lock implementation.
+--5862-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==5862== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-5862-by-pavel-on-???
+==5862== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-5862-by-pavel-on-???
+==5862== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-5862-by-pavel-on-???
+==5862== 
+==5862== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==5862== don't want to do, unless you know exactly what you're doing,
+==5862== or are doing some strange experiment):
+==5862==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=5862 ...command...
+==5862== 
+==5862== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==5862==   /path/to/gdb ./app
+==5862== and then give GDB the following command
+==5862==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=5862
+==5862== --pid is optional if only one valgrind process is running
+==5862== 
+--5862-- REDIR: 0x401e7c0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9a82 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--5862-- REDIR: 0x401e5a0 (ld-linux-x86-64.so.2:index) redirected to 0x580c9a9c (vgPlain_amd64_linux_REDIR_FOR_index)
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--5862--   Considering /usr/lib/debug/.build-id/1f/dbd27e1b18006ce47917636dcc0d35bd6729c5.debug ..
+--5862--   .. build-id is valid
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--5862--   Considering /usr/lib/debug/.build-id/0c/9a6e9d3907392310d89e285e3d6edaa3802ec5.debug ..
+--5862--   .. build-id is valid
+==5862== WARNING: new redirection conflicts with existing -- ignoring it
+--5862--     old: 0x0401e7c0 (strlen              ) R-> (0000.0) 0x580c9a82 vgPlain_amd64_linux_REDIR_FOR_strlen
+--5862--     new: 0x0401e7c0 (strlen              ) R-> (2007.0) 0x04838d80 strlen
+--5862-- REDIR: 0x401afe0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4839e40 (strcmp)
+--5862-- REDIR: 0x401ed00 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x483d860 (mempcpy)
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--5862--    object doesn't have a symbol table
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.29.so
+--5862--   Considering /usr/lib/debug/.build-id/4b/93a7cece16af81e899fb4f30ddd2d04458f130.debug ..
+--5862--   .. build-id is valid
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--5862--    object doesn't have a symbol table
+--5862-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.29.so
+--5862--   Considering /usr/lib/debug/.build-id/39/0f503de1e6c0f261c838d72f9f75197075766e.debug ..
+--5862--   .. build-id is valid
+--5862-- REDIR: 0x4c1f490 (libc.so.6:memmove) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e850 (libc.so.6:strncpy) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f7b0 (libc.so.6:strcasecmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e1a0 (libc.so.6:strcat) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e8b0 (libc.so.6:rindex) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c20b30 (libc.so.6:rawmemchr) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c38e50 (libc.so.6:wmemchr) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c38920 (libc.so.6:wcscmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f5f0 (libc.so.6:mempcpy) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f420 (libc.so.6:bcmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e7f0 (libc.so.6:strncmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e250 (libc.so.6:strcmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f550 (libc.so.6:memset) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c388e0 (libc.so.6:wcschr) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e750 (libc.so.6:strnlen) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e320 (libc.so.6:strcspn) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f800 (libc.so.6:strncasecmp) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e2c0 (libc.so.6:strcpy) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c3a0e0 (libc.so.6:wcsnlen) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e8f0 (libc.so.6:strpbrk) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e200 (libc.so.6:index) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1e710 (libc.so.6:strlen) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c24ed0 (libc.so.6:memrchr) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f850 (libc.so.6:strcasecmp_l) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f3e0 (libc.so.6:memchr) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c38a00 (libc.so.6:wcslen) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1eb90 (libc.so.6:strspn) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f750 (libc.so.6:stpncpy) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f6f0 (libc.so.6:stpcpy) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c20b70 (libc.so.6:strchrnul) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4c1f8a0 (libc.so.6:strncasecmp_l) redirected to 0x482b1b0 (_vgnU_ifunc_wrapper)
+--5862-- REDIR: 0x4cf0140 (libc.so.6:__strrchr_avx2) redirected to 0x4838790 (rindex)
+--5862-- REDIR: 0x4c1a7d0 (libc.so.6:malloc) redirected to 0x4835710 (malloc)
+--5862-- REDIR: 0x4cf0310 (libc.so.6:__strlen_avx2) redirected to 0x4838c60 (strlen)
+--5862-- REDIR: 0x4cec920 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x483c060 (bcmp)
+--5862-- REDIR: 0x4ceb850 (libc.so.6:__strcmp_avx2) redirected to 0x4839d00 (strcmp)
+--5862-- REDIR: 0x4902730 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4835d80 (operator new(unsigned long))
+--5862-- REDIR: 0x4cf32e0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x483d4a0 (mempcpy)
+--5862-- REDIR: 0x4c1b0c0 (libc.so.6:realloc) redirected to 0x4837d00 (realloc)
+--5862-- REDIR: 0x4ceff50 (libc.so.6:__strchrnul_avx2) redirected to 0x483d390 (strchrnul)
+--5862-- REDIR: 0x4cf3300 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x483c8a0 (memmove)
+--5862-- REDIR: 0x4cec1a0 (libc.so.6:__memchr_avx2) redirected to 0x4839ee0 (memchr)
+--5862-- REDIR: 0x4c1f030 (libc.so.6:__GI_strstr) redirected to 0x483dac0 (__strstr_sse2)
+--5862-- REDIR: 0x4902780 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x48364a0 (operator new[](unsigned long))
+--5862-- REDIR: 0x4900be0 (libstdc++.so.6:operator delete[](void*)) redirected to 0x4837520 (operator delete[](void*))
+--5862-- REDIR: 0x4c1ae70 (libc.so.6:free) redirected to 0x4836940 (free)
+==5862== 
+==5862== HEAP SUMMARY:
+==5862==     in use at exit: 14,558,113 bytes in 6 blocks
+==5862==   total heap usage: 16 allocs, 10 frees, 14,658,089 bytes allocated
+==5862== 
+==5862== Searching for pointers to 6 not-freed blocks
+==5862== Checked 14,672,976 bytes
+==5862== 
+==5862== 33 (24 direct, 9 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 6
+==5862==    at 0x4835DEF: operator new(unsigned long) (vg_replace_malloc.c:344)
+==5862==    by 0x10A142: main (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862== 
+==5862== 33 (24 direct, 9 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 6
+==5862==    at 0x4835DEF: operator new(unsigned long) (vg_replace_malloc.c:344)
+==5862==    by 0x10A243: main (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862== 
+==5862== 48 bytes in 1 blocks are definitely lost in loss record 5 of 6
+==5862==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==5862==    by 0x109CA9: Factoriser::DecimalToBinary(unsigned long long) (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862==    by 0x109938: Factoriser::recurvivePollardMinusOne(unsigned long long, unsigned long long, unsigned long long) (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862==    by 0x10A2B8: main (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862== 
+==5862== 14,557,999 bytes in 1 blocks are possibly lost in loss record 6 of 6
+==5862==    at 0x483577F: malloc (vg_replace_malloc.c:309)
+==5862==    by 0x1092CF: Factoriser::factorisationNaive(unsigned long long) (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862==    by 0x10A1C4: main (in /home/pavel/Documents/COURS/IATIC 4/Analyse_algos_et_validation_des_programmes/Projet/limitless_factorisation_algorithms/app)
+==5862== 
+==5862== LEAK SUMMARY:
+==5862==    definitely lost: 96 bytes in 3 blocks
+==5862==    indirectly lost: 18 bytes in 2 blocks
+==5862==      possibly lost: 14,557,999 bytes in 1 blocks
+==5862==    still reachable: 0 bytes in 0 blocks
+==5862==         suppressed: 0 bytes in 0 blocks
+==5862== 
+==5862== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)

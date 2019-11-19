@@ -11,13 +11,19 @@ private:
 
 public:
     Factoriser(unsigned long long int number);
-    unsigned int squareAndMultiply(unsigned long long int m, unsigned long long int n, short int *d);
+    unsigned int squareAndMultiply(unsigned long long int m, unsigned long long int n, short int *d, short int nbreRepeat);
     void fermatFactorisation(unsigned long long int n);
     void factorisationNaive(unsigned long long int nbre);
     short int *DecimalToBinary(unsigned long long int n);
     bool isSquare(unsigned long long int n);
     void addNewFactorToResult(unsigned long long int result);
     void printFactorsResult();
+
+    //Pollard -1
+    unsigned long long int pollardMinusOne(unsigned long long int nbre, unsigned long long int borne, unsigned long long int a);
+    void recurvivePollardMinusOne(unsigned long long int nbre, unsigned long long int borne, unsigned long long int a);
+    unsigned long long int factorielle(unsigned long long int nbre);
+    unsigned long long int pgcd(unsigned long long int a, unsigned long long int b);
 
     //Getters and setters
     void setNumber(unsigned long long int number);
